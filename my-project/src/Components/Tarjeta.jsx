@@ -6,10 +6,12 @@ import Card from 'react-bootstrap/Card';
 const POKEAPIURL = "https://rickandmortyapi.com/api/character";
 
 
-function getPokeApi(){
+export default function getPokeApi(){
   axios.get("https://rickandmortyapi.com/api/character")
 
   .then((response)=>{
+    console.log(POKEAPIURL);
+
     setData(response.data.results);
   })
   .catch((error)=>{
