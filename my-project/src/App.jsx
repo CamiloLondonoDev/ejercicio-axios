@@ -1,5 +1,7 @@
 import './styles/App.css'
-import Card from './Components/Tarjeta'
+import { Card } from "react-bootstrap";
+// import { Api } from "./Components/Tarjeta";
+import Api from "./Components/Tarjeta";
 
 
 function App() {
@@ -7,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <Card />
+        <Api/>
       </div>
 
     </>
