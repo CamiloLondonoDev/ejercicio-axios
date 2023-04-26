@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import axios from "axios";
 
 // const POKEAPIURL = "https://pokeapi.co/api/v2/pokemon/ditto";
 // const response = "https://rickandmortyapi.com/api/character";
@@ -58,24 +58,47 @@ export const Api = () => {
     axios.get("https://rickandmortyapi.com/api/character")
       .then((response) => {
         setData(response.data.results);
+        console.log(response.data.results);
       })
       .catch((error) => {
         console.log(error);
       });
   }
- 
+  return (
+    data.map((item) => (<Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={item.image} />
+    <Card.Body>
+      <Card.Title><strong>Name: </strong> {item.name}</Card.Title>
+      <Card.Text>
+        <strong>Gender: </strong>
+        {item.gender}
 
-  return(
-    <div>
-      {data.map((item)=>(
-        <div>
-          {item.id}
-          {item.name}
-          <img src={...item.image} alt="" srcset="" />
-        </div>
-      ))}
-    </div>
-  );
+        <strong>Species: </strong>
+        {item.species}
+
+        <strong>Status: </strong>
+        {item.status}
+
+        <strong>Origin: </strong>
+        {item.origin.name}
+      </Card.Text>
+    </Card.Body>
+  </Card>)));
+    
+
+      
+
+  // return(
+  //   <div>
+  //     {data.map((item)=>(
+  //       <div>
+  //         {/* {item.id} */}
+  //         {item.name}
+  //         <img src={...item.image} alt="" {...item.id} />
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 }
 // export default GetPokeApi();
 
