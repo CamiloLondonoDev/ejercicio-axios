@@ -68,10 +68,6 @@ export const Api = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-      </div>
-
- 
-))}
-    
+      </div>))}
     </div>)
 }
