@@ -68,18 +68,18 @@ export const Api = () => {
     data.map((item) => (<Card style={{ width: '18rem' }}>
     <Card.Img variant="top" src={item.image} />
     <Card.Body>
-      <Card.Title><strong>Nombre: </strong> {item.name}</Card.Title>
+      <Card.Title><strong>Name: </strong> {item.name}</Card.Title>
       <Card.Text>
-        <strong>Genero: </strong>
+        <strong>Gender: </strong>
         {item.gender}
 
-        <strong>Especie: </strong>
+        <strong>Species: </strong>
         {item.species}
 
-        <strong>Estatus: </strong>
+        <strong>Status: </strong>
         {item.status}
 
-        <strong>Origen: </strong>
+        <strong>Origin: </strong>
         {item.origin.name}
       </Card.Text>
     </Card.Body>
