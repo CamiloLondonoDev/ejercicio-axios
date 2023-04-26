@@ -23,47 +23,55 @@ export const Api = () => {
   }
 
   return (
-    data.map((item) => (<Card className="container" style={{ width: '18rem', justifyContent: 'center', marginBottom: '5px' }}>
-      <Card.Img variant="top" src={item.image} />
-      <Card.Body>
-        <Card.Title><strong>Name: </strong> {item.name}</Card.Title>
-        <Card.Text>
-          <div className="container">
-            <div className="row">
-              <div className="col-6">
-                <strong>Gender:</strong>
-              </div>
-              <div className="col-6">
-                {item.gender}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <strong>Species:</strong>
-              </div>
-              <div className="col-6">
-                {item.species}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <strong>Status:</strong>
-              </div>
-              <div className="col-6">
-                {item.status}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <strong>Origin:</strong>
-              </div>
-              <div className="col-6">
-                {item.origin.name}
-              </div>
-            </div>
-          </div>
-        </Card.Text>
+    <div className="row my-3 mx-5">{data.map((item) => (
 
-      </Card.Body>
-    </Card>)));
+      <div key={item.id} className="col-md-4 card-wrapper">
+        <Card className="mb-4">
+          <Card.Img variant="top" src={item.image} />
+          <Card.Body>
+            <Card.Title><strong>Name: </strong> {item.name}</Card.Title>
+            <Card.Text>
+              <div className="container">
+                <div className="row">
+                  <div className="col-6">
+                    <strong>Gender:</strong>
+                  </div>
+                  <div className="col-6">
+                    {item.gender}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <strong>Species:</strong>
+                  </div>
+                  <div className="col-6">
+                    {item.species}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <strong>Status:</strong>
+                  </div>
+                  <div className="col-6">
+                    {item.status}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <strong>Origin:</strong>
+                  </div>
+                  <div className="col-6">
+                    {item.origin.name}
+                  </div>
+                </div>
+              </div>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+
+ 
+))}
+    
+    </div>)
 }
