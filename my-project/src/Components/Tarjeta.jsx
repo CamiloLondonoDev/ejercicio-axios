@@ -8,10 +8,10 @@ export const Api = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    GetPokeApi()
+    GetRickAndMortyApi()
   }, [])
 
-  function GetPokeApi() {
+  function GetRickAndMortyApi() {
     axios.get("https://rickandmortyapi.com/api/character")
       .then((response) => {
         setData(response.data.results);
